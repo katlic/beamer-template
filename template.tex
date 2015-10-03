@@ -1,0 +1,129 @@
+\documentclass[compress,12pt]{beamer}% compress to have single line of dots
+
+% set up packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{appendixnumberbeamer} 
+\usepackage[figure,vlined]{algorithm2e}
+\newsavebox{\mybox}
+
+% smaller table font size
+\let\oldtabular\tabular
+\renewcommand{\tabular}{\small\oldtabular}
+\renewcommand{\arraystretch}{1.2}
+
+\usetheme{Amsterdam}
+
+% hide navigation
+\beamertemplatenavigationsymbolsempty
+
+% specify 'hidden' transparency
+\setbeamercovered{transparent=15}
+
+% section contents inserted at start of each section
+\AtBeginSection[]
+{
+\begin{frame}<beamer>{}% (Outline)
+\tableofcontents[currentsection,currentsubsection, 
+    hideothersubsections, 
+    sectionstyle=show/shaded,
+]
+\end{frame}
+}
+
+% title page details
+\title{Presentation Title}
+\subtitle{Presentation Subtitle}
+\author{First Last}
+\institute[ABBR]{Full Name}
+\date{\today}
+
+\begin{document}
+
+% hide header and footer on title
+{
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{} 
+\begin{frame}[noframenumbering]
+  \titlepage
+\end{frame}
+}
+
+% non-numbered section for outline
+\section*{Outline}
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsubsection,hideothersubsections,sectionstyle=show,subsectionstyle=hide]
+\end{frame}
+
+% first section
+\section{Section 1}
+\subsection{Subsection 1.1}
+\begin{frame}
+\frametitle{Title 1.1.1}
+Content
+\end{frame}
+
+\begin{frame}
+\frametitle{Title 1.1.2}
+Content
+\end{frame}
+
+\subsection{Subsection 1.2}
+\begin{frame}
+\frametitle{Title 1.2.1}
+\begin{block}{Block 1}
+\begin{itemize}
+\item Item 1
+\item Item 2
+\end{itemize}
+\end{block}
+\begin{block}{Block 2}
+\begin{itemize}
+\item Item 1
+\item Item 2
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Title 1.2.2}
+Content
+\end{frame}
+
+% second section
+\section{Section 2}
+\subsection{Subsection 2.1}
+\begin{frame}
+\frametitle{Title 2.1.1}
+Content
+\end{frame}
+
+\begin{frame}
+\frametitle{Title 2.1.2}
+Content
+\end{frame}
+
+% appendix section
+\appendix
+
+\begin{frame}[plain,c]
+\frametitle{Thank You}
+\begin{center}
+\Huge Questions?
+\end{center}
+\end{frame}
+
+\part{Appendix}
+\frame{\partpage}
+
+\section{Section A}
+\subsection{Subsection A.1}
+\begin{frame}
+\frametitle{Title A.1.1}
+Content
+\end{frame}
+
+\end{document}
